@@ -2,9 +2,18 @@
   "name": "@nxlerna/nomad",
   "version": "0.1.0",
   "private": true,
+  "peerDependencies": {
+    "eslint-config-prettier": "*",
+    "eslint-config-react": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-hooks": "*"
+  },
   "dependencies": {
     "@craco/craco": "^6.4.4",
     "@nxlerna/common": "^0.1.0",
+    "@nxlerna/ui": "^0.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
