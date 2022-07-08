@@ -17,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "27.5.1",
+    "create-react-app": "^5.0.1",
     "cypress": "^9.1.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -43,5 +44,10 @@
     "react-router-dom": "6.3.0",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sanskarsakya/nx-lerna-monorepo.git",
+  "author": "Puzan sakya <pujan@rigonepal.com>",
+  "license": "MIT"
 }

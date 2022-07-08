@@ -1,0 +1,93 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nomad3/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/nomad3",
+        "index": "packages/nomad3/src/index.html",
+        "baseHref": "/",
+        "main": "packages/nomad3/src/main.tsx",
+        "polyfills": "packages/nomad3/src/polyfills.ts",
+        "tsConfig": "packages/nomad3/tsconfig.app.json",
+        "assets": [
+          "packages/nomad3/src/favicon.ico",
+          "packages/nomad3/src/assets"
+        ],
+        "styles": [
+          "packages/nomad3/src/styles.scss"
+        ],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/nomad3/src/environments/environment.ts",
+              "with": "packages/nomad3/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nomad3:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nomad3:build:development"
+        },
+        "production": {
+          "buildTarget": "nomad3:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/nomad3/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/nomad3"
+      ],
+      "options": {
+        "jestConfig": "packages/nomad3/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

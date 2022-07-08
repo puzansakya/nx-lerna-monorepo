@@ -21,12 +21,6 @@
     "baseUrl": ".",
     "noImplicitAny": false,
     "paths": {
-      "@rigo/shared-types": [
-        "libs/shared-types/src/index.ts"
-      ],
-      "@rigo/ui": [
-        "libs/ui/src/index.ts"
-      ],
       "@rigo/ui/atoms": [
         "libs/ui/src/lib/atoms/forms/index.ts"
       ],
